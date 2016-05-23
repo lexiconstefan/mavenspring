@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+.generic-container {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #EAE7E7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px black;
+}
