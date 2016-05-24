@@ -15,71 +15,90 @@
 </head>
 <body ng-controller="userController as ctrl">
 
-	<div style="width:30%;float:left" class="generic-container">
+	<div style="width: 30%; float: left" class="generic-container">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<span class="lead">User Registration Form </span>
 			</div>
-			<div style="padding: 5px">
-				<div class="form-group">
-					<label>Förnamn</label> <input ng-model="user.firstname"
-						class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Efternamn</label> <input ng-model="user.lastname"
-						class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Adress</label> <input ng-model="user.adress"
-						class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Kommun</label> <input ng-model="user.municipality"
-						class="form-control">
-				</div>
-				<div class="row">
-					<div class="form-actions floatRight">
-						<input type="submit" value="Lägg till"
-							class="btn btn-primary btn-sm" ng-click="userSubmit(user)">
+			<div class="formcontainer">
+				<form ng-submit="userSubmit(user)" class="form-horizontal">
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable">Förnamn</label> 
+						<diV class="col-md-7">
+							<input ng-model="user.firstname" class="form-control">
+						</diV>
 					</div>
-				</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable">Efternamn</label>
+						<diV class="col-md-7">
+						 <input ng-model="user.lastname"
+							class="form-control">
+							</diV>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable">Adress</label>
+						<diV class="col-md-7">
+						 <input ng-model="user.adress"
+							class="form-control">
+							</diV>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-lable">Kommun</label> 
+						<diV class="col-md-7">
+						<input ng-model="user.municipality"
+							class="form-control">
+							</diV>
+					</div>
+					<div class="row">
+						<div class="form-actions floatRight">
+							<input type="submit" value="Lägg till"
+								class="btn btn-primary btn-sm">
+						</div>
+					</div>
+				</form>
 			</div>
+
 		</div>
 	</div>
-	
-	
-	<div style="width:50%;float:left" class="generic-container">
 
-	       <div class="panel panel-default">
-                <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">List of Users </span></div>
-              <div class="tablecontainer">
-                  <table class="table table-hover">
-                      <thead>
-                          <tr>
-                              <th>ID.</th>
-                              <th>Förnamn</th>
-                              <th>Efternamn</th>
-                              <th>Adress</th>
-                              <th>Kommun</th>
-                              <th width="20%"></th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="u in users">
-                              <td><span ng-bind="u.id"></span></td>
-                              <td><span ng-bind="u.firstname"></span></td>
-                              <td><span ng-bind="u.lastname"></span></td>
-                              <td><span ng-bind="u.adress"></span></td>
-                              <td><span ng-bind="u.municipality"></span></td>
-                              <td>
-                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
+
+	<div style="width: 50%; float: left" class="generic-container">
+
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<span class="lead">List of Users </span>
+			</div>
+			<div class="tablecontainer">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID.</th>
+							<th>Förnamn</th>
+							<th>Efternamn</th>
+							<th>Adress</th>
+							<th>Kommun</th>
+							<th width="20%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="u in users">
+							<td><span ng-bind="u.id"></span></td>
+							<td><span ng-bind="u.firstname"></span></td>
+							<td><span ng-bind="u.lastname"></span></td>
+							<td><span ng-bind="u.adress"></span></td>
+							<td><span ng-bind="u.municipality"></span></td>
+							<td>
+								<button type="button" ng-click="ctrl.edit(u.id)"
+									class="btn btn-success custom-width">Edit</button>
+								<button type="button" ng-click="ctrl.remove(u.id)"
+									class="btn btn-danger custom-width">Remove</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 
 
